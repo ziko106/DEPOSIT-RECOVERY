@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US Security Deposit Recovery Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header-badge">⚖️ LEGAL RECOVERY TOOL • USA</div>
+    <h2>🛡️ Security Deposit Recovery</h2>
+    <p class="subtitle">Calculate statutory penalties & generate your official State Demand Letter in 30 seconds.</p>
+
+    <div class="form-group">
+      <label>1. Select Your US State</label>
+      <select id="state-select">
+        <option value="CA">California (CA) — 21 Days / Up to 3x Penalty</option>
+        <option value="TX">Texas (TX) — 30 Days / $100 + 3x Penalty</option>
+        <option value="NY">New York (NY) — 14 Days / Up to 3x Penalty</option>
+        <option value="FL">Florida (FL) — 15 to 30 Days / Full Refund</option>
+        <option value="IL">Illinois (IL) — 30 Days / 2x Penalty + Fees</option>
+        <option value="GA">Georgia (GA) — 30 Days / 3x Penalty</option>
+        <option value="NC">North Carolina (NC) — 30 Days / Full + Fees</option>
+        <option value="OH">Ohio (OH) — 30 Days / 2x Penalty + Fees</option>
+      </select>
+
+      <label>2. Security Deposit Amount ($ USD)</label>
+      <input type="number" id="deposit-input" value="2200" />
+
+      <label>3. Move-Out Date</label>
+      <input type="date" id="date-input" />
+    </div>
+
+    <button type="button" class="main-btn" onclick="calculateClaim()">⚖️ Calculate Claim & Generate Letter</button>
+
+    <div class="dashboard" id="dashboard" style="display: none;">
+      <h4 id="status-banner" style="margin: 0 0 12px 0; font-size: 14px;">📊 Legal Deadline & Claim Audit</h4>
+      <div class="dash-row"><span>📅 Legal Return Deadline:</span><strong id="res-deadline">-</strong></div>
+      <div class="dash-row"><span>⏳ Current Legal Status:</span><strong id="res-status">-</strong></div>
+      <div class="dash-row"><span>📜 Governing Statute:</span><strong id="res-law" style="color: #60A5FA;">-</strong></div>
+      <div class="dash-row" style="border: none; font-weight: bold; margin: 0; padding: 0;">
+        <span style="color: #A7F3D0;">💰 Max Statutory Claim:</span>
+        <strong id="res-max" style="color: #10B981; font-size: 15px;">$0</strong>
+      </div>
+    </div>
+
+    <div class="prompt-box" id="letter-box" style="display: none;">
+      <div class="box-tabs">
+        <button type="button" class="sub-btn active" id="btn-doc-letter" onclick="showDoc('letter')">✉️ Official Demand Letter</button>
+        <button type="button" class="sub-btn" id="btn-doc-ai" onclick="showDoc('ai')">🤖 AI Deduction Fighter</button>
+      </div>
+      <textarea id="output-text" readonly></textarea>
+      <button type="button" id="copy-btn" onclick="copyResult()">📋 Copy Text</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
